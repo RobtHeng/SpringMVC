@@ -1,0 +1,5 @@
+package com.struts2.helloworld;
+
+public class Product {
+
+}

@@ -1,0 +1,5 @@
+package com.springmvc.crud.Dao;
+
+public class DepartmentDao {
+
+}

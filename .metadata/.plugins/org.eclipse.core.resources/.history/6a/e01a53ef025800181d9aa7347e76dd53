@@ -1,0 +1,8 @@
+package com.struts2.helloworld;
+
+public class Product {
+	private Integer productId;
+	private String productName;
+	private String productDesc;
+	private String productPrice;
+}

@@ -1,0 +1,11 @@
+package com.springmvc.crud.handlers;
+
+import org.springframework.web.bind.annotation.RequestMapping;
+
+public class EmployeeHandler {
+	
+	@RequestMapping("/emps")
+	public String list(){
+		return "list";
+	}
+}
