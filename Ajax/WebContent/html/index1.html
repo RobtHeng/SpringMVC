@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>People at Clearleft</title>
+<script type="text/javascript">
+	window.onload=function(){
+		var aNodes=document.getElementsByTagName("a");
+		for(var i=0;i<aNodes.length;i++){
+			aNodes[i].onclick=function(){
+				debugger
+				var request=new XMLHttpRequest();
+				var method="GET";
+				var url=this.href;
+				
+				request.open(method, url);
+				request.send(null);
+				
+				request.onreadystatechange=function(){
+					if(request.readyState==4){
+						if(request.status==200|| request.status==304){
+							//需使用responseXML
+							var result= request.responseXML;
+							debugger
+
+							var name=result.getElementsByTagName("name")[0].firstChild.nodeValue;
+							var website=result.getElementsByTagName("website")[0].firstChild.nodeValue;
+							var email=result.getElementsByTagName("email")[0].firstChild.nodeValue;
+							
+							var aNode=document.createElement("a");
+							aNode.appendChild(document.createTextNode(name));
+							aNode.href="mailto:"+email;
+							
+							var h2Node=document.createElement("h2");
+							h2Node.appendChild(aNode);
+							
+							var aNode2=document.createElement("a");
+							aNode2.appendChild(document.createTextNode(website));
+							aNode2.href=website;
+							
+							var detailsNode=document.getElementById("details");
+							detailsNode.innerHTML="";
+							detailsNode.appendChild(h2Node);
+							detailsNode.appendChild(aNode2);
+							
+						}
+					}
+				}
+				return false;
+			}
+		}
+	}
+</script>
+
+</head>
+<body>
+	<h1>People</h1>
+	<ul>
+		<li>
+			<a href="files/andy.xml">Andy</a>
+		</li>
+		<li>
+			<a href="files/richard.xml">Richard</a>
+		</li>
+		<li>
+			<a href="files/jeremy.xml">Jeremy</a>
+		</li>
+	</ul>
+	<div id="details"></div>
+
+
+
+</body>
+</html>

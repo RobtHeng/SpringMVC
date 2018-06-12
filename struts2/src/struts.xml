@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+	<constant name="struts.action.extension" value="action,do,"></constant>
+	
+	<package name="helloWorld" extends="struts-default">
+		<action name="product-input">
+			<result>/WEB-INF/Pages/input.jsp</result>
+		</action>
+		
+		<action name="product-*" class="com.struts2.helloworld.Product" method="{1}">
+			<exception-mapping result="input" exception="java.lang.ArithmeticException"></exception-mapping>
+			<result name="input">/WEB-INF/Pages/input.jsp</result>
+			<result name="details">/WEB-INF/Pages/details.jsp</result>
+		</action>
+		
+		<action name="TestActionContext" 
+			class="com.struts2.helloworld.TestActionContextAction">
+			<result>/ActionContext.jsp</result>	
+		</action>
+		
+		<action name="TestAwareAction" 
+			class="com.struts2.helloworld.TestAwareAction">
+			<result>/AwareAction.jsp</result>	
+		</action>
+		
+		<action name="TestServletActionContext" 
+			class="com.struts2.helloworld.TestServletActionContext">
+			<result>/TestServletActionContext.jsp</result>	
+		</action>
+		
+		<action name="TestServletAwareAction" 
+			class="com.struts2.helloworld.TestServletAwareAction">
+			<result>/TestServletAwareAction.jsp</result>	
+		</action>
+		
+		<action name="login-ui"> 
+			<result>/Login.jsp</result>	
+		</action>
+		
+		<action name="user-login" 
+				class="com.struts2.helloworld.UserAction"> 
+			<result name="login-success">/login-success.jsp</result>	
+		</action>
+		
+		<action name="log" 
+				class="com.struts2.helloworld.UserAction" method="logout"> 
+			<result name="logout-success">/login-out.jsp</result>	
+		</action>
+		
+		<action name="save"
+			class="com.struts2.helloworld.User" method="save">
+			<result name="success">/WEB-INF/Pages/details.jsp</result>	
+		</action>
+	</package>
+
+</struts>

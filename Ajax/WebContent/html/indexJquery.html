@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>People at Clearleft</title>
+<script type="text/javaScript" src="../scripts/jquery.min.js"></script>
+<script type="text/javascript">
+
+	$(function(){
+		alert(332)
+		$("a").click(function(){
+			var url=this.href+" h2 ";
+			var args={"time":new Date(),"number":2};
+			$("#details").load(url,args);
+			return false;
+		});
+		
+	})
+
+</script>
+
+</head>
+<body>
+	<h1>People</h1>
+	<ul>
+		<li>
+			<a href="files/andy.html">Andy</a>
+		</li>
+		<li>
+			<a href="files/richard.html">Richard</a>
+		</li>
+		<li>
+			<a href="files/jeremy.html">Jeremy</a>
+		</li>
+	</ul>
+	<div id="details"></div>
+
+
+
+</body>
+</html>

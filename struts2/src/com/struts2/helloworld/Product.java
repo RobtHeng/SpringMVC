@@ -1,6 +1,10 @@
 package com.struts2.helloworld;
 
-public class Product {
+import java.util.Map;
+
+import org.apache.struts2.interceptor.RequestAware;
+
+public class Product implements RequestAware {
 	private Integer productId;
 	private String productName;
 	private String productDesc;
@@ -14,6 +18,7 @@ public class Product {
 		this.productDesc = productDesc;
 		this.productPrice = productPrice;
 	}
+	
 
 	public Product() {
 
@@ -56,5 +61,26 @@ public class Product {
 
 	public void setProductPrice(String productPrice) {
 		this.productPrice = productPrice;
+	}
+	
+	public String save(){
+		
+		Product test= new Product();
+		test.setProductName(this.getProductName());
+		test.setProductDesc(this.getProductDesc());
+		test.setProductPrice(this.getProductPrice());
+		requestMap.put("test", test);
+		System.out.println("product:"+this);
+		
+		//int i=3/0;
+		return "details";
+	}
+
+	private Map<String,Object> requestMap;
+
+	@Override
+	public void setRequest(Map<String, Object> request) {
+		requestMap=request;
+		
 	}
 }

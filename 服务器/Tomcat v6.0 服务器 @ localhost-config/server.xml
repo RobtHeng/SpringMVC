@@ -131,7 +131,7 @@
                prefix="localhost_access_log." suffix=".txt" pattern="common" resolveHosts="false"/>
         -->
 
-      <Context docBase="TestTomcat" path="/TestTomcat" reloadable="true" source="org.eclipse.jst.jee.server:TestTomcat"/><Context docBase="BBS" path="/BBS" reloadable="true" source="org.eclipse.jst.jee.server:BBS"/><Context docBase="hibernateTest" path="/hibernateTest" reloadable="true" source="org.eclipse.jst.jee.server:hibernateTest"/><Context docBase="MVCTest" path="/MVCTest" reloadable="true" source="org.eclipse.jst.jee.server:MVCTest"/><Context docBase="SpringMVC" path="/SpringMVC" reloadable="true" source="org.eclipse.jst.jee.server:SpringMVC"/><Context docBase="struts2" path="/struts2" reloadable="true" source="org.eclipse.jst.jee.server:struts2"/></Host>
+      <Context docBase="SSH" path="/SSH" reloadable="true" source="org.eclipse.jst.jee.server:SSH"/></Host>
     </Engine>
   </Service>
 </Server>
