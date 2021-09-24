@@ -17,7 +17,6 @@ public class ShoppingCart {
 			items.put(bookName, item);
 		}
 	}
-
 	public int getTotalBookNumber() {
 		int total = 0;
 		for (ShoppingCartItem item : items.values()) {
